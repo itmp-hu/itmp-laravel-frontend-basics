@@ -1,4 +1,3 @@
-```markdown
 ### Bevezetés a szoftverfejlesztésbe
 
 #### 1. A Java és C# nyelvek alapjai
@@ -34,4 +33,3 @@
 - Alkalmazza a whitespace karakterek szabályos használatát az olvashatóság javításához
 - Dokumentálja a kódot nyelvspecifikus megjegyzési technikákkal (pl. XML dokumentáció)
 - Refaktorál egyszerű kódrészleteket a karbantarthatóság érdekében
-```
