@@ -1,35 +1,29 @@
-### Bevezetés a szoftverfejlesztésbe
+# Frontend fejlesztés alapjai Laravellel
+## ITMP Klub képzés infotanároknak
 
-#### 1. A Java és C# nyelvek alapjai
-##### 1.1 Történeti áttekintés és nyelvi elemek
-- Összefoglalja a Java és C# nyelvek történetét, kialakulását és ipari jelentőségét világviszonylatban
-- Azonosítja a nyelvcsaládok közös és eltérő jellemzőit (pl. platformfüggetlenség, memóriakezelés)
-- Különbözteti meg a forrás-, konfigurációs fájlokat és futtatókörnyezetek működését
+Az ITMP Klub újabb izgalmas képzéssel készül a tavaszi félévben! Május 17-én, szombaton egy egynapos online képzésen fedezhetjük fel a Laravel keretrendszer lehetőségeit a frontend fejlesztés területén.  
+Szeretnéd megismerni, hogyan működik a server side rendering technika a PHP világában? Most itt a tökéletes alkalom, hogy a Laravel segítségével betekintést nyerj a modern webalkalmazások fejlesztésének titkaiba!  
+A képzés során megismerheted a Laravel alapvető működését, megtanulod, hogyan készíthetsz dinamikus felhasználói felületeket, és hogyan integrálhatod ezeket a backend rendszerekkel.  
+A képzést Sándor László, a győri Jedlik Ányos Gépipari és Informatikai Technikum tapasztalt oktatója vezeti, aki szakmai tudását és gyakorlati tapasztalatait osztja meg a résztvevőkkel. Csatlakozz hozzánk, és lépj be a Laravel varázslatos világába!
 
-##### 1.2 Fejlesztői eszközök alapvető használata
-- Létrehoz egy új projektet Visual Studio vagy IntelliJ IDEA környezetben sablonok segítségével
-- Konfigurálja a fejlesztőkörnyezet alapbeállításait (pl. SDK verzió, build eszközök)
-- Kezeli a projektfájlokat és könyvtárszerkezetet a fejlesztőeszközön belül
+**A továbbképzés időpontja:** 2025. május 17. (szombat) 9:00-15:00
 
-#### 2. Alkalmazásfejlesztés alapvető technikái
-##### 2.1 Konzolos alkalmazások készítése
-- Implementál egyszerű parancssori programokat alapvető bemeneti/kimeneti műveletekkel
-- Használja a nyelvspecifikus szintaxis elemeit (pl. Main metódus, osztálydefiníciók)
-- Hibakeresést végez breakpointokkal és léptető eszközökkel a kódsorok ellenőrzéséhez
+**A továbbképzés formája:** online
 
-##### 2.2 Grafikus felületek alapjai
-- Készít egyszerű GUI alkalmazásokat beépített komponensekkel (pl. ablakok, gombok)
-- Kapcsolja össze eseménykezelőket a felhasználói interakciók kezeléséhez
-- Teszteli a grafikus komponensek viselkedését különböző felbontásokon és operációs rendszereken
+### A képzés tervezett tematikája és ütemezése:
 
-#### 3. Szoftverfejlesztési folyamatok
-##### 3.1 Fejlesztési modellek és paradigmák
-- Alkalmazza a spirális modell és folyamatos integráció alapelveit kisebb projektekben
-- Összehasonlítja a különböző fejlesztési módszertanokat (pl. agilis vs. vízeses modell)
-- Részt vesz csoportos kódáttekintési folyamatban (code review) stílusellenőrzéssel
-
-##### 3.2 Kódminőség és karbantarthatóság
-- Betartja az ipari szabványoknak megfelelő kódolási konvenciókat és elnevezési sémákat
-- Alkalmazza a whitespace karakterek szabályos használatát az olvashatóság javításához
-- Dokumentálja a kódot nyelvspecifikus megjegyzési technikákkal (pl. XML dokumentáció)
-- Refaktorál egyszerű kódrészleteket a karbantarthatóság érdekében
+| Időpont           | Téma                                                     |
+| ----------------- | -------------------------------------------------------- |
+| _09:00 - 09:15_   | _Köszöntő, technikai információk_                        |
+| **09:15 - 11:00** | **1. modul – Laravel telepítés, projekt létrehozása**    |
+| 09:15 - 09:45     | 1. modul elméleti áttekintés - Sándor László             |
+| 09:45 - 10:45     | 1. modul workshop - kiscsoportos, mentorált gyakorlat    |
+| _10:45 - 11:00_   | _Kávészünet_                                             |
+| **11:00 - 13:30** | **2. modul - Blade sablonok és komponensek**             |
+| 11:00 - 11:30     | 2. modul elméleti áttekintés és demó - Sándor László     |
+| 11:30 - 12:30     | 2. modul workshop - kiscsoportos, mentorált gyakorlat    |
+| _12:30 - 13:30_   | _Ebédszünet_                                             |
+| **13:30 - 14:45** | **3. modul - Adatmegjelenítés és interakciók**           |
+| 13:30 - 14:00     | 3. modul elméleti áttekintés és demó - Sándor László     |
+| 14:00 - 14:45     | 3. modul workshop - kiscsoportos, mentorált gyakorlat    |
+| _14:45 - 15:00_   | _Kérdések és válaszok, napzárás_                         |
