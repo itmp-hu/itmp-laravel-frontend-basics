@@ -1,5 +1,13 @@
 # Laravel Frontend fejlesztés: 1. modul - Laravel telepítés, projekt létrehozása
 
+- Bevezetés a Laravelbe
+- Mi az SSR (Server-Side Rendering)?
+- Szükséges szoftverek: **PHP, Composer, Laravel installer**
+- Laravel fejlesztés elindítása
+- Lokális fejlesztői szerver
+- A Laravel mappastruktúra
+- Welcome page
+
 ## Bevezetés a Laravelbe
 
 ### Mi az a Laravel?
