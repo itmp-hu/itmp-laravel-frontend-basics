@@ -1,7 +1,6 @@
 # Laravel Frontend: 2. modul - Blade sablonok és komponensek
 
 - Bevezetés: Mire jó a Blade?
-- Adatok megjelenítése
 - Blade direktívák
 - Blade komponensek
 - Anoním komponensek
@@ -14,6 +13,22 @@
 
 A **Blade** a Laravel beépített sablonmotorja, amely tiszta, olvasható szintaxist biztosít a dinamikus HTML generálásához. Segítségével egyszerűen valósíthatók meg komponens-alapú nézetek, öröklődéses sablonstruktúrák, ciklusok, elágazások és űrlapkezelés.  
 A Blade fájlok a `resources/views/` mappában `.blade.php` kiterjesztéssel helyezkednek el.
+
+---
+
+## Blade direktívák
+
+A Blade direktívák olyan speciális utasítások, amelyek egyszerűsítik a PHP-kód beágyazását a Blade sablonokba. Laravel számos beépített direktívát biztosít, és saját direktívákat is létrehozhatunk.
+
+Blade direktívák nélkül:
+```php
+<?php echo $user->>name; ?>
+```
+
+Blade direktívák használatával:
+```php
+{{ $user->name }}
+```
 
 ---
 
@@ -31,15 +46,11 @@ Ha HTML tartalmat is meg szeretnél jeleníteni (biztonsági kockázat!), haszn�
 {!! $post->content !!}
 ```
 
----
 
-## Blade direktívák
-
-A Blade direktívák olyan speciális utasítások, amelyek egyszerűsítik a PHP-kód beágyazását a Blade sablonokba. Laravel számos beépített direktívát biztosít, és saját direktívákat is létrehozhatunk.
 
 ### Feltételes direktívák
 
-- @if, @elseif, @else, @endif
+- @if, @elseif, @else
     ```php
     @if($user->isAdmin())
         <p>Admin felhasználó vagy.</p>
@@ -129,7 +140,7 @@ A Blade direktívák olyan speciális utasítások, amelyek egyszerűsítik a PH
 
 ## Blade komponensek
 
-A Blade komponensek lehetővé teszik, hogy újrafelhasználható, tiszta és moduláris HTML + PHP sablonokat hozzunk létre. A komponensek különösen hasznosak, ha ugyanazt a struktúrát több helyen is szeretnénk megjeleníteni – például gombokat, kártyákat, vagy űrlapmezőket.
+A Blade komponensek lehetővé teszik, hogy újra felhasználható, tiszta és moduláris HTML + PHP sablonokat hozzunk létre. A komponensek különösen hasznosak, ha ugyanazt a struktúrát több helyen is szeretnénk megjeleníteni – például gombokat, kártyákat, vagy űrlapmezőket.
 
 Lehetnek:
 
