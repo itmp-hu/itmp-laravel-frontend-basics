@@ -7,6 +7,7 @@
 - Lokális fejlesztői szerver
 - A Laravel mappastruktúra
 - Welcome page
+- Paraméter átadása a nézetnek
 
 ## Bevezetés a Laravelbe
 
@@ -197,3 +198,35 @@ Route::get('/', function () {
 Keressük meg a `welcome.blade.php` oldalt a `resources/views` mappában!
 
 
+## Paraméter átadása a nézetnek
+
+A `view()` metódus második paraméterében megadhatunk egy asszociatív tömböt, amely tartalmazza a nézetben használandó adatokat.
+
+```php
+Route::get('/home', function () {
+    return view('home', ['name' => 'John Doe']);
+});
+```
+
+### Fiktív user adatok generálása és átadása a nézetnek
+
+A `database/seeders/DatabaseSeeder.php` fájlban tegyük aktívvá az alábbi sort:
+```php
+User::factory(10)->create();
+```
+
+Futtassuk le a következő parancsot a terminálban:
+```sh
+php artisan db:seed
+```
+
+Ezzel létrehoztunk 10 fiktív felhasználót.
+
+Adjuk át ezeket a felhasználókat a nézetnek:
+```php
+Route::get('/users', function () {
+    return view('users', ['users' => User::all()]);
+});
+```
+
+*Az adatok megjelenítésével a következő modulban foglalkozunk.*
