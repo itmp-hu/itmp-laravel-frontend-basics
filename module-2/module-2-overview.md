@@ -247,7 +247,7 @@ A komponens sablonjában a `{{ $slot }}` változóval érheted el ezt a tartalma
 </div>
 ```
 
-**Nevesített slot-ok**
+**Nevesített slotok**
 
 Több slot esetén nevesítheted is őket:
 

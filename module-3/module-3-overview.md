@@ -56,7 +56,7 @@ Amikor egy űrlapot beküldünk, a Laravel automatikusan visszairányítja a fel
 ```
 
 - Az `any()` metódus ellenőrzi, hogy bármilyen hiba történt-e.
-- Az `all()` összes hibaüzenetet visszaad tömbként, amit itt felsorolunk.
+- Az `all()` az összes hibaüzenetet visszaadja tömbként.
 
 #### Input visszatöltése hiba esetén
 
@@ -65,5 +65,5 @@ Hogy a felhasználónak ne kelljen újra begépelni az adatokat validációs hib
 <input type="text" name="email" value="{{ old('email') }}">
 ```
 
-- Az `old('mező_neve')` visszadja a korábban beírt adatokat.
+- Az `old('mező_neve')` visszaadja a korábban beírt adatokat.
 
