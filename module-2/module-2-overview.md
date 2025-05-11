@@ -220,7 +220,7 @@ public function __construct($type, $message)
 
 <details>
 <summary><b>Unresolvable dependency</b> hibaüzenet kezelése</summary>
-Ha egy komponens osztályban változtatunk valamit (pl. új paramétert adunk a konstruktornak) néha szükséges a cahce törlése. Enélkül az alábbi hibaüzenetet kaphatjuk:
+Ha egy komponens osztályban változtatunk valamit (pl. új paramétert adunk a konstruktornak) néha szükséges a cache törlése. Enélkül az alábbi hibaüzenetet kaphatjuk:
 
 ```Unresolvable dependency resolving [Parameter #0...]```
 
