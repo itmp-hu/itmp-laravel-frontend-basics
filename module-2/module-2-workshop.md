@@ -1,19 +1,15 @@
 # 2. modul workshop - Blade sablonok és komponensek
 
-- Kiinduló adatok importálása SQLite adaatbázisba (`cars.sql`)
-- Modell létrehozása (`Car`)
-- Végpont létrehozása
-- Layout kialakítása
-- Adatok megjelenítése a nézetben
-- Komponens létrehozása (`card`)
-- EXTRA: menü komponens létrehozása (`nav`)
+Ebben a modulban megismerjük a Blade sablonnyelvet, amely segítségével könnyen és gyorsan tudunk HTML oldalakat készíteni. Ennek segítségével megjelenítünk autókat. A designt a [Bootstrap](https://getbootstrap.com/) segítségével valósítjuk meg.
 
-> **Cél:**  
-> - Beimportáljuk a kiinduló adatokat SQLite adatbázisba. 
+> **Feladatok:**  
+> - Beimportáljuk a kiinduló adatokat SQLite adatbázisba (`cars.sql`). 
 > - Létrehozzuk a `Car` modellt, az adatbázisban lévő adatok eléréséhez.
-> - Layout komponens segítségével kialakítjuk egy egységes és konzisztens felületet.
+> - Létrehozunk egy végpontot.
+> - Layout komponens segítségével kialakítunk egy egységes és konzisztens felületet.
 > - A `Car` modell segítségével megjelenítjük az adatokat egy nézetben.
 > - Létrehozunk egy komponenst egy adott autó adatainak megjelenítésére.
+> - **EXTRA**: menü komponens létrehozása (`nav`)
 
 ## Kiinduló adatok importálása SQLite adaatbázisba
 
@@ -29,9 +25,9 @@ Telepítsük fel az **SQLite3 Editor** extension-t a VS Code-ba! Ennek segítsé
 - Ellenőrizzük, hogy a projekt gyökérkönyvtárában vagyunk-e!
 - Adjuk ki a következő parancsot:
 
-```bash
-php artisan make:model Car
-```
+    ```bash
+    php artisan make:model Car
+    ```
 
 Ezzel létrejön a `app/Models` mappában a `Car.php` állomány és a `Car` modell. A `Car` modellen keresztül fogjuk elérni az adatbázis `cars` táblájában lévő adatokat.
 
@@ -62,7 +58,7 @@ Hozzunk létre egy új `GET` végpontot az autók adatainak megjelenítésére!
     ```
 
 - Alakítsuk ki a HTML oldal vázát a `resources/views/components/layout.blade.php` fájlban!
-- A formázáshoz importáljuk a Bootstrap CSS-t a HTML oldal `head` részébe!
+- A formázáshoz importáljuk a [Bootstrap](https://getbootstrap.com/) CSS-t a HTML oldal `head` részébe!
 - Az oldal `body` részébe helyezzük el a `{{ $slot }}` utasítást!
 - A meglévő oldalainkat (pl. `home`, `users`, `about`) szervezzük át a `layout` komponensbe:
     - Töröljük a `layout`-ba helyezett közös részeket!
@@ -82,7 +78,7 @@ Hozzunk létre egy új `GET` végpontot az autók adatainak megjelenítésére!
 - Hozzunk létre egy új fájlt a `resources/views/` mappában `cars.blade.php` néven!
 - A nézet paraméterként megkapja a `cars` tömböt, amelyet a végpontunkban adtunk át neki.
 - Használjuk a `@foreach` vagy `@forelse` utasítást a `cars` tömb elemeinek megjelenítéséhez!
-- Az egyes autókat jelenítsük meg tetszőleges elrendezésben például egy Bootstrap `card`-ban!
+- Az egyes autókat jelenítsük meg tetszőleges elrendezésben például egy [Bootstrap `card`](https://getbootstrap.com/docs/5.3/components/card/)-ban!
 - Az `Car` osztály egyes mezőit a `->` operátorral érhetjük el! Például:
 
    ```html
@@ -126,4 +122,53 @@ Megoldás: az összes cache-elt fájl törlése az alábbi paranccsal:
 
 ## EXTRA: Menü létrehozása
 
-Segítsük az egyes oldalak elérését egy menü létrehozásával! A korábban megtanultak alapján hozzunk létre egy új komponenst a menü megjelenítésére! A menü kialakításához használjuk pl. a Bootstrap `nav` css osztályát! A menüben jelenítsük meg a meglévő oldalainkat (pl.: `home`, `users`, `cars`)! Helyezzük el a menüt a `layout` komponensben!
+Segítsük az egyes oldalak elérését egy menü létrehozásával! 
+- A korábban megtanultak alapján hozzunk létre egy új komponenst a menü megjelenítésére!
+
+    ```bash
+    php artisan make:component nav --view
+     ```
+
+- A menü kialakításához használjuk pl. a [Bootstrap `navbar`](https://getbootstrap.com/docs/5.3/components/navbar/) css osztályát! 
+- Helyezzük el a menüt a `layout` komponensben!
+    ```html
+    <x-nav></x-nav>
+    ```
+- A menüben jelenítsük meg a meglévő oldalainkat (pl.: `home`, `users`, `cars`)!
+
+<details>
+<summary>Minta menü megtekintése...</summary>
+
+```html
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Cars</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cars">Cars</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cars/create">New car</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+```
+
+</details>
+

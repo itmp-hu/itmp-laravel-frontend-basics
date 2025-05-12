@@ -7,7 +7,7 @@
 - Alkamazás tesztelése böngészőben
 - Paraméter átadása a nézeteknek
 
-> [!NOTE]  
+
 > **Cél:**  
 > - Minden szükséges eszköz telepítve legyen a számítógépen: Composer, parancssori PHP, Laravel installer, Visual Studio Code! 
 > - Legyen létrehozva egy Laravel projekt! 
