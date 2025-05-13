@@ -15,7 +15,7 @@
 
 A Laravel egy modern **PHP keretrendszer**, amely megkönnyíti a webalkalmazások fejlesztését egy egyszerű és elegáns szintaxissal. A Laravel számos beépített funkcióval rendelkezik, mint például az Eloquent ORM, Artisan CLI, **Blade templating rendszer**, valamint API fejlesztést támogató eszközök.
 
-### Miért érdemes Laravel-t használni?
+### Miért érdemes Laravelt használni?
 - Egyszerű szintaxis és gyors fejlesztés
 - MVC (Model-View-Controller) alapú architektúra
 - Erőteljes ORM (Eloquent) az adatbázis kezeléséhez
@@ -80,7 +80,7 @@ A fenti szoftverek telepíthetők egyesével:
 
  ...vagy **egy lépésben** a Laravel dokumentációjában található script segítségével (*Windows, Linux vagy macOS operációs rendszerre*) [innen](https://laravel.com/docs/12.x/installation#installing-php).
 
-Például Windows-ban PowerShellt kell indítani **rendszergazdaként**, majd ott lefuttatni az alábbi parancsot:
+Például Windowsban PowerShellt kell indítani **rendszergazdaként**, majd ott lefuttatni az alábbi parancsot:
 ```powershell
 # Run as administrator...
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.4'))
@@ -169,7 +169,7 @@ Egy frissen klónozott projekthez utólag telepítendők a csomagok a következ�
 composer install
 ```
 
-**6. A főkönyvtárban lévő fontos állományok:**
+**7. A főkönyvtárban lévő fontos állományok:**
 - **.env** – Környezeti változók beállításai, például adatbáziskapcsolat.
 - **artisan** – Laravel parancssori segédeszköz.
 - **composer.json** – A csomagfüggőségek meghatározása.
@@ -183,7 +183,7 @@ php artisan serve
 
 Nézzük meg egy böngészőben mit tapasztalunk: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
-### Hogyan jelenek meg ez az oldal? 
+### Hogyan jelenik meg ez az oldal? 
 
 A Laravelben a végpontokat a `routes/web.php` fájlban definiáljuk.
 

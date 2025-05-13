@@ -34,7 +34,7 @@ Az osztályban hozzuk létre a `store` metódust, amely validálja a kérésben 
 <summary><code>CarController</code> osztály <b><code>Store</code></b> metódus...</summary>
 
 ```php
-function store(Request $request) {
+public function store(Request $request) {
     $validated = $request->validate([
         'title' => 'required|string|max:255',
         'start_production' => 'required|integer|min:1900|max:' . date('Y'),
@@ -59,7 +59,7 @@ function store(Request $request) {
     public $timestamps = false;
     ```
 
-A `$guarded` property lehetővé teszti a `Car::create()` metódus használatát. A `$timestamps` property tudatja a modellel hogy nem használjuk a `created_at` és `updated_at` mezőket.
+A `$guarded = []` azt jelenti, hogy minden mező tömegesen kitölthető (`mass assignable`), így használhatjuk a `Car::create()` metódust. A `$timestamps` property tudatja a modellel hogy nem használjuk a `created_at` és `updated_at` mezőket.
 
 ## Új POST végpont létrehozása
 - Hozzunk létre egy új `POST` végpontot a `web.php` fájlban (`/cars`), amely segítségével tudunk autót felvenni az adatbázisba! 
@@ -98,7 +98,7 @@ A `$guarded` property lehetővé teszti a `Car::create()` metódus használatát
 - Ugyanígy adjuk hozzá a ```@session('error')``` direktívát, amely megjeleníti a hibaüzenetet, ha létezik!
 
 ## Korábbi adatok megjelenítése az űrlap elküldésekor
-Módosítsuk a `crete.blade.php` nézetet, hogy a korábbi adatokat megőrizze az űrlap sikertelen elküldésekor! Minden input mezőhöz adjuk hozzá a `value` attribútumot, amely az `old()` függvény segítségével megkapja a korábbi adatokat! Például:
+Módosítsuk a `create.blade.php` nézetet, hogy a korábbi adatokat megőrizze az űrlap sikertelen elküldésekor! Minden input mezőhöz adjuk hozzá a `value` attribútumot, amely az `old()` függvény segítségével megkapja a korábbi adatokat! Például:
 
 ```php
 <input type="text" class="form-control" id="title" name="title" value="{{old('title')}}">
@@ -107,7 +107,7 @@ Módosítsuk a `crete.blade.php` nézetet, hogy a korábbi adatokat megőrizze a
 ## Validálási hibák megjelenítése
 A `CarController` osztály `store` metódusában használt `validate()` metódus validálja a kérésben érkező adatokat. Ha valamelyik mező értéke nem megfelelő, akkor automatikusan visszairányítja a felhasználót a `cars.create` végpontra és a hibákat a `session` objektum `error` tulajdonságában tárolja!
 
-Módosítsuk a `crete.blade.php` nézetet, hogy a validálási hibákat megjelenítse!
+Módosítsuk a `create.blade.php` nézetet, hogy a validálási hibákat megjelenítse!
 
 Amennyiben egy adott mezőhöz van hibaüzenet, akkor a Bootstrap `is-invalid` osztályát adjuk hozzá a mezőhöz, amely pirosra változtatja a mezőt! Például:
     
@@ -144,7 +144,7 @@ A hibaüzenet szövegét (ha van) az `invalid-feedback` Bootstrap osztályba sor
 <summary><code>CarController</code> osztály <b><code>destroy</code></b> metódus...</summary>
 
 ```php
-function destroy($id) {
+public function destroy($id) {
     $car = Car::find($id);
     if (!$car) {
         return redirect()->route('cars.index')->with('error', 'No car found.');

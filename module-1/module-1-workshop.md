@@ -3,8 +3,8 @@
 - Laravel telepítése
 - Projekt inicializálása
 - Webszerver futtatása
-- Új html oldalak létrehozása
-- Alkamazás tesztelése böngészőben
+- Új HTML oldalak létrehozása
+- Alkalmazás tesztelése böngészőben
 - Paraméter átadása a nézeteknek
 
 
@@ -51,7 +51,7 @@ Teszteljük le az alkalmazást egy böngészőben: [http://127.0.0.1:8000/](http
 
 ## Új oldalak létrehozása
 
-- Keresd meg és szerkesztd a következő fájlt: `api/web.php`:
+- Keresd meg és szerkesztd a következő fájlt: `routes/web.php`:
 
   Cseréld le a saját nyitó oldaladra a welcome view-t:
   ```php

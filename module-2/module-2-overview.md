@@ -22,7 +22,7 @@ A Blade direktívák olyan speciális utasítások, amelyek egyszerűsítik a PH
 
 Blade direktívák nélkül:
 ```php
-<?php echo $user->>name; ?>
+<?php echo $user->name; ?>
 ```
 
 Blade direktívák használatával:

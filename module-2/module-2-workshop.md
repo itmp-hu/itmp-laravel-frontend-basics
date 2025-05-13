@@ -11,11 +11,11 @@ Ebben a modulban megismerjük a Blade sablonnyelvet, amely segítségével könn
 > - Létrehozunk egy komponenst egy adott autó adatainak megjelenítésére.
 > - **EXTRA**: menü komponens létrehozása (`nav`)
 
-## Kiinduló adatok importálása SQLite adaatbázisba
+## Kiinduló adatok importálása SQLite adatbázisba
 
 Telepítsük fel az **SQLite3 Editor** extension-t a VS Code-ba! Ennek segítségével importálhatjuk az autókat tartalmazó adatokat az SQLite adatbázisba: 
 - Másoljuk a projektünk `database` könyvtárába, majd nyissuk meg a `cars.sql` fájlt a `module-2/workshop-sources/` mappából.
-- Ha fel van telepítve az SQLite3 Editor extension, akkor a fájl tetején megjelenik a **Connect** link. Kattintsunk rá és kapcsolódjunk a `databese.sqlite` adatbázishoz!
+- Ha fel van telepítve az SQLite3 Editor extension, akkor a fájl tetején megjelenik a **Connect** link. Kattintsunk rá és kapcsolódjunk a `database.sqlite` adatbázishoz!
 - Ha sikeresen csatlakoztunk, a `CREATE TABLE` és az `INSERT` utasítok felett megjelenik az **Execute** felirat. Kattintsunk rá és futtassuk le a parancsokat!
 - Ellenőrizzük, hogy sikeres volt-e az importálás: nyissuk meg a `database.sqlite` állományt a `database` mappából! Válasszuk ki a `cars` táblát és ellenőrizzük, hogy az adatok megjelennek-e!
 
@@ -67,7 +67,7 @@ Hozzunk létre egy új `GET` végpontot az autók adatainak megjelenítésére!
    ```html
    <h1 class="mb-3 p-5 text-center bg-dark text-white">{{ $title ?? 'Home' }}</h1>
    ```
-- A meglévő oldalainkban (pl. `users`, `about`) hozzunk létre egy új <x-slot> taget, amelyben megadjuk a `layout`-nak átadandó `title` értéket! Például:
+- A meglévő oldalainkban (pl. `users`, `about`) hozzunk létre egy új `<x-slot>` taget, amelyben megadjuk a `layout`-nak átadandó `title` értéket! Például:
    ```html
    <x-slot name="title">Users</x-slot>
    ```
@@ -78,7 +78,7 @@ Hozzunk létre egy új `GET` végpontot az autók adatainak megjelenítésére!
 - Hozzunk létre egy új fájlt a `resources/views/` mappában `cars.blade.php` néven!
 - A nézet paraméterként megkapja a `cars` tömböt, amelyet a végpontunkban adtunk át neki.
 - Használjuk a `@foreach` vagy `@forelse` utasítást a `cars` tömb elemeinek megjelenítéséhez!
-- Az egyes autókat jelenítsük meg tetszőleges elrendezésben például egy [Bootstrap `card`](https://getbootstrap.com/docs/5.3/components/card/)-ban!
+- Az egyes autókat jelenítsük meg tetszőleges elrendezésben például egy [Bootstrap `card`](https://getbootstrap.com/docs/5.3/components/card/) komponenssel!
 - Az `Car` osztály egyes mezőit a `->` operátorral érhetjük el! Például:
 
    ```html
@@ -103,7 +103,7 @@ Szerkesszük a `Card.php` fájlt! A konstruktorban adjuk át a `$car` objektumot
 public function __construct(public Car $car) {}
 ```
 
-Helyezzük át a `cars.blade.php` nézteből a `@foreach` vagy `@forelse` utasításában lévő, egy autó megjelenítéséért felelős `<div class="card>...</div>` elem teljes tartalmát a `card.blade.php` fájlba, és a helyén jelenítsük meg a `card` komponenst! Ne felejtsük átadni a `$car` objektumot a komponensnek!
+Helyezzük át a `cars.blade.php` nézetből a `@foreach` vagy `@forelse` utasításában lévő, egy autó megjelenítéséért felelős `<div class="card">...</div>` elem teljes tartalmát a `card.blade.php` fájlba, és a helyén jelenítsük meg a `card` komponenst! Ne felejtsük átadni a `$car` objektumot a komponensnek!
 ```html
 <x-card :car="$car" />
 ```
